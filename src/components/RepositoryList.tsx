@@ -3,23 +3,19 @@ import { RepositoryItem } from "./RepositoryItem";
 
 import "../styles/repositories.scss";
 
+type Repository = {
+  name: string;
+  description: string;
+  html_url: string;
+};
+
 export function RepositoryList() {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   useEffect(() => {
     fetch("https://api.github.com/orgs/rocketseat/repos")
       .then((response) => response.json())
-      .then((data) => {
-        const newRepositories = data.map((repository) => {
-          return {
-            id: repository.id,
-            name: repository.name,
-            description: repository.description,
-            link: repository.html_url,
-          };
-        });
-        setRepositories(newRepositories);
-      });
+      .then((data) => setRepositories(data));
   }, []);
 
   return (
@@ -28,7 +24,9 @@ export function RepositoryList() {
 
       <ul>
         {repositories.map((repository) => {
-          return <RepositoryItem key={repository.id} repository={repository} />;
+          return (
+            <RepositoryItem key={repository.name} repository={repository} />
+          );
         })}
       </ul>
     </section>
