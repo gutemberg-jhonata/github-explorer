@@ -12,8 +12,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 🚀 Uso
 
 ```bash 
-git clone https://github.com/gutemberg-jhonata/to.do.git
-cd to.do
+git clone https://github.com/gutemberg-jhonata/github-explorer.git
+cd github-explorer
 yarn dev
 ```
 
