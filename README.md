@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="github-explorer" src=".github/github-explorer.svg" width="100%">
+  <img alt="github-explorer" src=".github/github-explorer.png" width="100%">
 </p>
 
 ## 🧪 Tecnologias
